@@ -238,7 +238,7 @@ void WriteMeshWithData(
     Reconstructor::Implicit<Real, Dim, FEMSig,
                             typename AuxDataFactory::VertexType> &implicit,
     const Reconstructor::LevelSetExtractionParameters &meParams, bool hasColors,
-    const PoissonReconLib::IMesh<Real> &out_mesh) {
+    PoissonReconLib::IMesh<Real> &out_mesh) {
   // A description of the output vertex information
   using VInfo =
       Reconstructor::OutputVertexWithDataInfo<Real, Dim, AuxDataFactory,
@@ -272,7 +272,7 @@ void WriteMeshWithData(
 template <class Real, unsigned int Dim, unsigned int FEMSig,
           typename AuxDataFactory>
 bool Execute(const PoissonReconLib::ICloud<Real> &inCloud,
-             const PoissonReconLib::IMesh<Real> &out_mesh,
+             PoissonReconLib::IMesh<Real> &out_mesh,
              const PoissonReconLib::Parameters &params,
              const AuxDataFactory &auxDataFactory) {
   static const bool HasAuxData =

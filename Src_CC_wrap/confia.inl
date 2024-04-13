@@ -98,7 +98,7 @@ void Write_Confia(
     const VertexFactory &vFactory, size_t vertexNum, size_t polygonNum,
     InputDataStream<typename VertexFactory::VertexType> &vertexStream,
     InputDataStream<std::vector<Index>> &polygonStream, bool hasDensity,
-    bool hasColors, const PoissonReconLib::IMesh<Real> &out_mesh) {
+    bool hasColors, PoissonReconLib::IMesh<Real> &out_mesh) {
 
   vertexStream.reset();
   polygonStream.reset();
